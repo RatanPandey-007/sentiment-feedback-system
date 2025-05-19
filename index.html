@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#4CAF50" />
+    <meta name="description" content="A Modern React Web App with a Beautiful Background" />
+    <meta name="keywords" content="React, Web App, Beautiful UI, Background Image" />
+    <meta name="author" content="Your Name" />
+
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
+
+    <!-- Custom Styles -->
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: 'Poppins', sans-serif;
+        background-image: url('%PUBLIC_URL%/7791.jpg'); /* Your image file in public folder */
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 100vh;
+        width: 100vw;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      #root {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        backdrop-filter: brightness(0.8);
+      }
+
+      .loading {
+        font-size: 1.5rem;
+        color: #ffffff;
+        background-color: rgba(0, 0, 0, 0.5);
+        padding: 1rem 2rem;
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        text-align: center;
+      }
+    </style>
+
+    <title>My Modern React App</title>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root">
+      <div class="loading">Loading the app, please wait...</div>
+    </div>
+  </body>
+</html>

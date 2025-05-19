@@ -1,0 +1,268 @@
+/* Base styling */
+.App {
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, rgba(30, 31, 38, 0.95), rgba(58, 59, 79, 0.95)), url('https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=1470&q=80') no-repeat center center fixed;
+  background-size: cover;
+  min-height: 100vh;
+  padding: 40px 20px;
+  color: #e0e6f2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  animation: bgPulse 10s ease-in-out infinite alternate;
+  backdrop-filter: blur(4px);
+}
+
+/* Background pulse animation */
+@keyframes bgPulse {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Logo styling and animations */
+.App-logo {
+  height: 20vmin;
+  pointer-events: none;
+  filter: drop-shadow(0 0 15px #61dafb);
+  border-radius: 50%;
+  box-shadow:
+    0 0 30px 8px #61dafb77,
+    0 0 60px 20px #21a1f188;
+  cursor: default;
+  animation: logoPulse 3s ease-in-out infinite, logoSpin 20s linear infinite;
+  transform-origin: center;
+  transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+.App-logo:hover {
+  filter: drop-shadow(0 0 30px #21a1f1);
+  transform: scale(1.15) rotate(15deg);
+}
+
+/* Logo pulse glow */
+@keyframes logoPulse {
+  0%, 100% {
+    box-shadow:
+      0 0 30px 8px #61dafb88,
+      0 0 60px 18px #21a1f188;
+  }
+  50% {
+    box-shadow:
+      0 0 40px 15px #61dafbcc,
+      0 0 80px 30px #21a1f1cc;
+  }
+}
+
+/* Smooth infinite spin animation */
+@keyframes logoSpin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Header styling with animated gradient background */
+.App-header {
+  background: rgba(29, 31, 43, 0.8);
+  backdrop-filter: blur(6px);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  background-size: 800% 800%;
+  animation: gradientShift 15s ease infinite;
+  min-height: 70vh;
+  max-width: 800px;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(14px + 2vmin);
+  box-shadow:
+    inset 0 0 40px #000000cc,
+    0 12px 40px rgba(0, 0, 0, 0.6);
+  border-radius: 20px;
+  padding: 50px 40px;
+  margin: 0 auto;
+  color: #cbd5f5;
+  text-shadow: 0 0 8px #1e90ffaa;
+  transition: box-shadow 0.3s ease;
+}
+
+/* Gradient background shifting */
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.App-header:hover {
+  box-shadow:
+    inset 0 0 60px #0077ffcc,
+    0 16px 50px rgba(0, 119, 255, 0.7);
+}
+
+/* Link styling with animated underline */
+.App-link {
+  position: relative;
+  color: #61dafb;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.3rem;
+  letter-spacing: 0.07em;
+  user-select: none;
+  text-shadow: 0 0 10px #21a1f1cc;
+  transition: color 0.3s ease;
+}
+
+.App-link::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 3px;
+  left: 0;
+  bottom: -6px;
+  background: #21a1f1;
+  transition: width 0.4s ease;
+  border-radius: 2px;
+}
+
+.App-link:hover {
+  color: #21a1f1;
+}
+
+.App-link:hover::after {
+  width: 100%;
+}
+
+/* Fade-in text animation */
+.fade-in {
+  opacity: 0;
+  animation: fadeInUp 1s ease forwards;
+  animation-delay: 0.3s;
+}
+
+/* Fade in and move up */
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+}
+
+/* Stylish input and textarea */
+input[type="text"], textarea {
+  width: 100%;
+  max-width: 600px;
+  padding: 12px 15px;
+  margin: 10px 0;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.05);
+  color: #ffffff;
+  font-size: 1rem;
+  outline: none;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease;
+}
+
+input[type="text"]:focus, textarea:focus {
+  background-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 20px rgba(33, 161, 241, 0.3);
+}
+
+/* Stylish button */
+button {
+  background: #21a1f1;
+  color: #fff;
+  padding: 12px 30px;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(33, 161, 241, 0.3);
+  transition: background 0.3s ease, transform 0.2s ease;
+  margin-top: 10px;
+}
+
+button:hover {
+  background: #1e90ff;
+  transform: scale(1.05);
+}
+
+button:disabled {
+  background: #888;
+  cursor: not-allowed;
+}
+
+/* Toast styling */
+.toast {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 12px 25px;
+  border-radius: 10px;
+  font-weight: 600;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+  z-index: 1000;
+  animation: fadeInUp 0.5s ease forwards;
+}
+
+.toast.success {
+  background: #28a745;
+  color: white;
+}
+
+.toast.error {
+  background: #dc3545;
+  color: white;
+}
+
+/* Result box styling */
+.result-box {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 25px;
+  margin-top: 20px;
+  max-width: 600px;
+  width: 100%;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.result-box h3 {
+  margin-bottom: 15px;
+}
+
+.sentiment.positive {
+  color: #28a745;
+}
+
+.sentiment.negative {
+  color: #dc3545;
+}
+
+.sentiment.neutral {
+  color: #ffc107;
+}
